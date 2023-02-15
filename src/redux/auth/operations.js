@@ -15,7 +15,7 @@ const authHeader = {
 
 export const signUp = createAsyncThunk(
   'auth/signup',
-  async (credentials, thunkApi) => {
+  async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/signup', credentials);
       // console.log('credentials: ', credentials);
@@ -24,7 +24,7 @@ export const signUp = createAsyncThunk(
       return response.data;
     } catch (error) {
       // console.log(error);
-      return thunkApi.rejectWithValue(
+      return thunkAPI.rejectWithValue(
         'Register Error. Try another name, email or password'
       );
     }
@@ -33,24 +33,43 @@ export const signUp = createAsyncThunk(
 
 export const logIn = createAsyncThunk(
   '/auth/login',
-  async (credentials, thunkApi) => {
+  async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/login', credentials);
       authHeader.set(response.data.token);
-      console.log('Error in Try: ', response);
       return response.data;
     } catch (error) {
       console.log('Error in Catch: ', error);
-      return thunkApi.rejectWithValue('Log in Error. Wrong email or password');
+      return thunkAPI.rejectWithValue('Log in Error. Wrong email or password');
     }
   }
 );
 
-export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
     await axios.post('users/logout');
     authHeader.clear();
   } catch (error) {
-    thunkApi.rejectWithValue('Missing header with authorization token.');
+    thunkAPI.rejectWithValue('Missing header with authorization token.');
   }
 });
+
+export const userRefresh = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+
+    try {
+      authHeader.set(persistedToken);
+      const response = await axios.get('users/current');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue('Please, log in');
+    }
+  }
+);
