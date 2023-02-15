@@ -1,7 +1,10 @@
 import { useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth'; // CLEAR LATER
 
 export function LogInForm() {
+  const { isLoggedIn } = useAuth();
   const dispatch = useDispatch();
 
   const onLogIn = event => {
@@ -17,6 +20,10 @@ export function LogInForm() {
 
     form.reset();
   };
+
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  } // CLEAR LATER
 
   return (
     <form onSubmit={onLogIn}>

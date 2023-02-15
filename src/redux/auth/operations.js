@@ -45,3 +45,12 @@ export const logIn = createAsyncThunk(
     }
   }
 );
+
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkApi) => {
+  try {
+    await axios.post('users/logout');
+    authHeader.clear();
+  } catch (error) {
+    thunkApi.rejectWithValue('Missing header with authorization token.');
+  }
+});
