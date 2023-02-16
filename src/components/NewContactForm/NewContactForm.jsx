@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 
-export function NewContactForm() {
+export function NewContactForm({ closeModal }) {
   const dispatch = useDispatch();
 
   const handleNewContact = event => {
@@ -14,6 +14,7 @@ export function NewContactForm() {
       })
     );
     form.reset();
+    closeModal && closeModal();
   };
 
   return (
@@ -23,10 +24,14 @@ export function NewContactForm() {
           Name
           <input type="text" name="name" />
         </label>
+        {/* CLEAR LATER */}
+        <br />
         <label>
           Phone
           <input type="tel" name="number" />
         </label>
+        {/* CLEAR LATER */}
+        <br />
         <button type="submit">Add contact</button>
       </form>
     </>

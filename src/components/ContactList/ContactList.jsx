@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { selectAllContacts } from 'redux/contacts/selectors';
-import { deleteContact, updateContact } from 'redux/contacts/operations';
-import { NewContactForm } from 'components/NewContactForm/NewContactForm';
+import { deleteContact } from 'redux/contacts/operations';
+// import { NewContactForm } from 'components/NewContactForm/NewContactForm';
 import { Contact } from 'components/Contact/Contact';
 
 export function ContactList() {
@@ -22,7 +22,7 @@ export function ContactList() {
   return (
     <>
       <h1>Contact List</h1>
-      <NewContactForm />
+      {/* <NewContactForm /> */}
       {contacts !== [] &&
         contacts.map(contact => (
           <li key={contact.id}>

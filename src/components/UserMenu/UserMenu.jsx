@@ -18,6 +18,8 @@ export function UserMenu() {
       <button type="button" onClick={onLogOut}>
         Log out
       </button>
+      {/* CLEAR LATER */}
+      <hr />
     </>
   );
 }
