@@ -4,7 +4,7 @@ import { logIn } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth'; // CLEAR LATER
 
 export function LogInForm() {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth(); //CLEAR LATER
   const dispatch = useDispatch();
 
   const onLogIn = event => {
@@ -22,7 +22,7 @@ export function LogInForm() {
   };
 
   if (isLoggedIn) {
-    return <Navigate to="/" />;
+    return <Navigate to="/contacts" />;
   } // CLEAR LATER
 
   return (

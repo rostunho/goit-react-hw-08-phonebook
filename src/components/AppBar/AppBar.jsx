@@ -1,7 +1,6 @@
-import { Logo } from 'components/Logo/Logo';
-import { AuthNav } from 'components/AuthNav/AuthNav';
+import { Navigation } from 'components/Navigation/Navigation';
 import { UserMenu } from 'components/UserMenu/UserMenu';
-import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
+import { AuthNav } from 'components/AuthNav/AuthNav';
 import { useAuth } from 'hooks/useAuth';
 
 export function AppBar() {
@@ -9,8 +8,7 @@ export function AppBar() {
 
   return (
     <>
-      <Logo />
-      <ThemeSwitcher />
+      <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </>
   );
