@@ -17,6 +17,7 @@ import { filterReducer } from './filter/reducer';
 
 const persistConfig = {
   auth: { key: 'auth', storage, whitelist: ['token'] },
+  theme: { key: 'theme', storage, whitelist: ['isDark'] },
 };
 
 const middleware = [
@@ -29,8 +30,8 @@ const middleware = [
 
 export const store = configureStore({
   reducer: {
+    theme: persistReducer(persistConfig.theme, themeReducer),
     auth: persistReducer(persistConfig.auth, authReducer),
-    theme: themeReducer,
     contacts: contactsReducer,
     filter: filterReducer,
   },

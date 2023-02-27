@@ -30,7 +30,7 @@ export function ContactDetails() {
         <label>
           <input type="tel" name="number" defaultValue={number} />
         </label>
-        <button type="submit">Edit</button>
+        <button type="submit">Save</button>
       </form>
     </>
   );

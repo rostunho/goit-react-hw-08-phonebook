@@ -1,11 +1,24 @@
 import { Outlet } from 'react-router-dom';
-import { AppBar } from 'components/AppBar/AppBar';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
+import { Logo } from 'components/Logo/Logo';
+import { UserMenu } from 'components/UserMenu/UserMenu';
+import { SideBar } from 'components/SideBar/SideBar';
+import { Header, Container } from './Layout.styled';
 
 export function Layout() {
+  const userIsLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <>
-      <AppBar />
-      <Outlet />
+      <Header>
+        <Logo />
+        {userIsLoggedIn && <UserMenu />}
+      </Header>
+      <Container>
+        <SideBar />
+        <Outlet />
+      </Container>
     </>
   );
 }

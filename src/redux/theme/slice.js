@@ -1,16 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createReducer } from '@reduxjs/toolkit';
+import { themeChange } from './operations';
 
-const themeSlice = createSlice({
-  name: 'theme',
-  initialState: {
-    isDark: false,
-  },
-  reducers: {
-    themeChange: (state, action) => {
-      state.isDark = action.payload;
-    },
-  },
+// const savedTheme = localStorage.getItem('persist:theme');
+// console.log(savedTheme);
+
+export const themeReducer = createReducer({ isDark: false }, builder => {
+  builder.addCase(themeChange, (state, action) => {
+    state.isDark = action.payload;
+  });
 });
-
-export const { themeChange } = themeSlice.actions;
-export const themeReducer = themeSlice.reducer;

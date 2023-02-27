@@ -1,12 +1,15 @@
-export const theme = Object.freeze({
+export const themeLight = Object.freeze({
   colors: {
-    white: '#ffffff',
-    black: '#010101',
-    green: '#4caf50',
-    red: '#f44336',
-    blue: '#2196f3',
-    primaryText: '#212121',
-    secondaryText: '#757575',
+    appBg: '#E7E7E7',
   },
+
+  spacing: value => `${4 * value}px`,
+});
+
+export const themeDark = Object.freeze({
+  colors: {
+    appBg: '#363636',
+  },
+
   spacing: value => `${4 * value}px`,
 });

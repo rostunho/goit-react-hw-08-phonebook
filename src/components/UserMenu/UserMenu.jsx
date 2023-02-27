@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
+import { Menu } from './UserMenu.styled';
 
 export function UserMenu() {
   const { user } = useAuth();
@@ -11,7 +12,7 @@ export function UserMenu() {
   };
 
   return (
-    <>
+    <Menu>
       <p>
         Wellcome,<b> {user.name}</b>
       </p>
@@ -20,6 +21,6 @@ export function UserMenu() {
       </button>
       {/* CLEAR LATER */}
       <hr />
-    </>
+    </Menu>
   );
 }
