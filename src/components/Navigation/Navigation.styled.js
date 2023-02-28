@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { vars } from 'constants/varialbles';
 
 export const Nav = styled.nav`
+  margin-bottom: 24px;
   background-image: linear-gradient(
     to right,
 

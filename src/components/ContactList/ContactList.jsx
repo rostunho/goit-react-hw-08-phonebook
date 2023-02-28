@@ -4,7 +4,7 @@ import { deleteContact } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { selectFilterValue } from 'redux/filter/selectors';
 import { Contact } from 'components/Contact/Contact';
-import { Filter } from 'components/Filter/Filter';
+// import { Filter } from 'components/Filter/Filter';
 import { Container } from './ContactList.styled';
 
 export function ContactList({ toggleModal }) {
@@ -34,7 +34,7 @@ export function ContactList({ toggleModal }) {
         Add New Contact
       </button>
       {/* CLEAR LATER  */}
-      <Filter />
+      {/* <Filter /> */}
       {/* <NewContactForm /> */}
       {visibleContacts !== [] &&
         visibleContacts.map(contact => (

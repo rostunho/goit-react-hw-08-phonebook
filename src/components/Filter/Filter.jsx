@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filter/operations';
+import { SearchInput } from './Filter. styled';
 
 export function Filter() {
   const dispatch = useDispatch();
@@ -10,7 +11,13 @@ export function Filter() {
 
   return (
     <>
-      <input type="text" name="filter" onChange={handleFilter} />
+      <SearchInput
+        type="text"
+        name="filter"
+        onChange={handleFilter}
+        placeholder="FIND CONTACT BY NAME"
+        style={{ marginBottom: '24px' }}
+      />
     </>
   );
 }

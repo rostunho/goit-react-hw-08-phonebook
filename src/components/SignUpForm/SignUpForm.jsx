@@ -22,14 +22,18 @@ export function SignUpForm() {
     <>
       <form onSubmit={onSignUp}>
         <label>
+          Name
           <input type="text" name="name" />
         </label>
         <label>
+          Email
           <input type="email" name="email" />
         </label>
         <label>
+          Password
           <input type="password" name="password" />
         </label>
+        Register
         <button type="submit">Sign Up</button>
       </form>
     </>
