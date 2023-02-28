@@ -1,7 +1,10 @@
 import { useDispatch } from 'react-redux';
+import { RxAvatar } from 'react-icons/rx';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
-import { Menu } from './UserMenu.styled';
+import { Menu, Name } from './UserMenu.styled';
+import { vars } from 'constants/varialbles';
+import { Button } from 'components/Button/Button';
 
 export function UserMenu() {
   const { user } = useAuth();
@@ -13,14 +16,11 @@ export function UserMenu() {
 
   return (
     <Menu>
-      <p>
-        Wellcome,<b> {user.name}</b>
-      </p>
-      <button type="button" onClick={onLogOut}>
+      <RxAvatar size="50px" color={vars.accentColor} />
+      <Name>{user.name}</Name>
+      <Button type="button" onClick={onLogOut}>
         Log out
-      </button>
-      {/* CLEAR LATER */}
-      <hr />
+      </Button>
     </Menu>
   );
 }
