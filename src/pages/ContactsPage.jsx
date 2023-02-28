@@ -19,10 +19,7 @@ export function ContactsPage() {
 
   return (
     <>
-      <button type="button" onClick={toggleModal}>
-        Add New Contact
-      </button>
-      <ContactList />
+      <ContactList toggleModal={toggleModal} />
       {showModal && (
         <Modal onClose={toggleModal}>
           <NewContactForm closeModal={toggleModal} />

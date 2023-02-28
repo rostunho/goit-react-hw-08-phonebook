@@ -3,7 +3,7 @@ import { signUp, logIn, logOut, userRefresh } from './operations';
 import toast from 'react-hot-toast';
 
 const handleRejected = (state, action) => {
-  toast.error(action.payload);
+  // toast.error(action.payload);
   state.isLoading = false;
   state.isLoggedIn = false;
 };

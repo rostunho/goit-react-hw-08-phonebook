@@ -5,8 +5,9 @@ import { selectAllContacts } from 'redux/contacts/selectors';
 import { selectFilterValue } from 'redux/filter/selectors';
 import { Contact } from 'components/Contact/Contact';
 import { Filter } from 'components/Filter/Filter';
+import { Container } from './ContactList.styled';
 
-export function ContactList() {
+export function ContactList({ toggleModal }) {
   const contacts = useSelector(selectAllContacts);
   const filterValue = useSelector(selectFilterValue);
 
@@ -27,8 +28,11 @@ export function ContactList() {
   );
 
   return (
-    <>
+    <Container>
       <h1>Contact List</h1>
+      <button type="button" onClick={toggleModal}>
+        Add New Contact
+      </button>
       {/* CLEAR LATER  */}
       <Filter />
       {/* <NewContactForm /> */}
@@ -42,6 +46,6 @@ export function ContactList() {
             />
           </li>
         ))}
-    </>
+    </Container>
   );
 }

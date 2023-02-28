@@ -1,15 +1,14 @@
 import { Navigation } from 'components/Navigation/Navigation';
-import { AuthNav } from 'components/AuthNav/AuthNav';
-import { useAuth } from 'hooks/useAuth';
-import { Container } from 'components/Container/Container';
+
+// import { useAuth } from 'hooks/useAuth';
+import { Container } from './SideBar.styled';
+import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
 
 export function SideBar() {
-  const { isLoggedIn } = useAuth();
-
   return (
     <Container>
       <Navigation />
-      {!isLoggedIn && <AuthNav />}
+      <ThemeSwitcher />
     </Container>
   );
 }
