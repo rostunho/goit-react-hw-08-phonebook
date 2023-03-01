@@ -11,7 +11,7 @@ export const SearchInput = styled.input`
   font-size: 24px;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.primaryText};
-  background-color: ${({ theme }) => theme.colors.headerBg};
+  background-color: ${({ theme }) => theme.colors.appBg};
 
   border: 4px solid ${vars.accentColor};
   border-radius: 8px;

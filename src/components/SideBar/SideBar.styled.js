@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { vars } from 'constants/varialbles';
 
 export const Container = styled.div`
   display: block;
@@ -9,21 +8,21 @@ export const Container = styled.div`
   height: 564px;
 
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.headerBg};
+  background-color: ${({ theme }) => theme.colors.appBg};
 
   /* background-image: linear-gradient(
       to bottom,
-      ${({ theme }) => theme.colors.headerBg} 48px,
+      ${({ theme }) => theme.colors.appBg} 48px,
       transparent 48px,
       transparent 90%,
-      ${({ theme }) => theme.colors.headerBg} 90%,
-      ${({ theme }) => theme.colors.headerBg} 100%
+      ${({ theme }) => theme.colors.appBg} 90%,
+      ${({ theme }) => theme.colors.appBg} 100%
     ),
     linear-gradient(
       to right,
-      ${({ theme }) => theme.colors.headerBg} 48px,
+      ${({ theme }) => theme.colors.appBg} 48px,
       ${({ theme }) => theme.colors.accentGrey} 48px,
       ${({ theme }) => theme.colors.accentGrey} 56px,
-      ${({ theme }) => theme.colors.headerBg} 56px
+      ${({ theme }) => theme.colors.appBg} 56px
     ); */
 `;

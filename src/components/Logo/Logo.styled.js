@@ -7,7 +7,7 @@ export const PhonebookLogo = styled.div`
   padding: 18px 48px;
   border-radius: 8px;
   margin-right: 4px;
-  background-color: ${({ theme }) => theme.colors.headerBg};
+  background-color: ${({ theme }) => theme.colors.appBg};
 `;
 
 export const Label = styled.h1`

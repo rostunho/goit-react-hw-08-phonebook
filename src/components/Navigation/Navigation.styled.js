@@ -7,8 +7,8 @@ export const Nav = styled.nav`
     to right,
 
     ${vars.accentColor} 4px,
-    ${({ theme }) => theme.colors.headerBg} 4px,
-    ${({ theme }) => theme.colors.headerBg} 56px
+    ${({ theme }) => theme.colors.appBg} 4px,
+    ${({ theme }) => theme.colors.appBg} 56px
   );
 `;
 
@@ -40,9 +40,9 @@ export const Item = styled.li`
 //     background-size: contain;
 //     background-image: linear-gradient(
 //       to bottom,
-//       ${({ theme }) => theme.colors.headerBg} 40%,
+//       ${({ theme }) => theme.colors.appBg} 40%,
 //       ${vars.accentColor} 40%,
 //       ${vars.accentColor} 60%,
-//       ${({ theme }) => theme.colors.headerBg} 60%
+//       ${({ theme }) => theme.colors.appBg} 60%
 //     );
 //   }

@@ -19,25 +19,55 @@ export const Header = styled.header`
   /* padding: 0 48px; */
   border-radius: 8px;
 
-  background-color: ${({ theme }) => theme.colors.headerBg};
+  background-color: ${({ theme }) => theme.colors.appBg};
 
   background-image: linear-gradient(
       to left,
-      ${({ theme }) => theme.colors.headerBg} 48px,
+      ${({ theme }) => theme.colors.appBg} 48px,
       transparent 48px,
       transparent 100%
     ),
     linear-gradient(
       to bottom,
-      ${({ theme }) => theme.colors.headerBg} 40%,
+      ${({ theme }) => theme.colors.appBg} 40%,
       ${vars.accentColor} 40%,
       ${vars.accentColor} 60%,
-      ${({ theme }) => theme.colors.headerBg} 60%
+      ${({ theme }) => theme.colors.appBg} 60%
     );
 `;
 
 export const MainContent = styled.main`
-  width: 100%;
+  display: block;
+  width: 850px;
+  height: 564px;
+  padding: 48px;
+  overflow-x: hidden;
+  overflow-y: auto;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.headerBg};
+  background-color: ${({ theme }) => theme.colors.appBg};
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.accentGrey};
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /* border-radius: 8px; */
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: ${vars.accentColor};
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    /* border-radius: 8px; */
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;

@@ -6,7 +6,7 @@ export const Menu = styled.div`
   min-width: 100px;
   padding: 18px 48px;
   border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.headerBg};
+  background-color: ${({ theme }) => theme.colors.appBg};
 `;
 
 export const Name = styled.p`
