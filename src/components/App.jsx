@@ -12,9 +12,10 @@ import { HomePage } from 'pages/HomePage';
 import { ContactsPage } from 'pages/ContactsPage';
 import { ContactDetailsPage } from 'pages/ContactDetailsPage';
 import { NewContactPage } from 'pages/NewContactPage';
+import { SignUpPage } from 'pages/SignUpPage';
 import { Container } from './Container/Container';
 import { Layout } from './Layout/Layout';
-import { SignUpForm } from './SignUpForm/SignUpForm';
+// import { SignUpForm } from './SignUpForm/SignUpForm';
 import { LogInForm } from './LogInForm/LogInForm';
 // import { NewContactForm } from './NewContactForm/NewContactForm';
 
@@ -34,7 +35,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
-              <Route path="register" element={<SignUpForm />} />
+              <Route path="register" element={<SignUpPage />} />
               <Route path="login" element={<LogInForm />} />
               <Route path="contacts" element={<ContactsPage />} />
               <Route

@@ -38,6 +38,9 @@ export const Header = styled.header`
 
 export const MainContent = styled.main`
   display: block;
+  /* align-items: center;
+  justify-content: center; */
+
   width: 850px;
   height: 564px;
   padding: 48px;

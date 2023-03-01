@@ -18,7 +18,12 @@ export function UserMenu() {
     <Menu>
       <RxAvatar size="50px" color={vars.accentColor} />
       <Name>{user.name}</Name>
-      <Button type="button" onClick={onLogOut}>
+      <Button
+        type="button"
+        onClick={onLogOut}
+        textSize="16px"
+        style={{ height: '24px', minWidth: '100px', borderRadius: 0 }}
+      >
         Log out
       </Button>
     </Menu>

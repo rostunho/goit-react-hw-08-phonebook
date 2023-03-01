@@ -4,7 +4,6 @@ import { deleteContact } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { selectFilterValue } from 'redux/filter/selectors';
 import { Contact } from 'components/Contact/Contact';
-// import { Filter } from 'components/Filter/Filter';
 import { Container } from './ContactList.styled';
 
 export function ContactList({ toggleModal }) {
@@ -30,12 +29,7 @@ export function ContactList({ toggleModal }) {
   return (
     <Container>
       <h1>Contact List</h1>
-      <button type="button" onClick={toggleModal}>
-        Add New Contact
-      </button>
-      {/* CLEAR LATER  */}
-      {/* <Filter /> */}
-      {/* <NewContactForm /> */}
+
       {visibleContacts !== [] &&
         visibleContacts.map(contact => (
           <li key={contact.id}>

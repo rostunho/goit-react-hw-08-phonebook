@@ -11,10 +11,14 @@ export function SideBar() {
   return (
     <Container>
       <Navigation />
-      {isLoggedIn && <Filter />}
-      <NaviLink addButton to="contacts/new">
-        + Add new contact
-      </NaviLink>
+      {isLoggedIn && (
+        <>
+          <Filter style={{ marginBottom: '24px' }} />
+          <NaviLink addButton to="contacts/new">
+            + Add new contact
+          </NaviLink>
+        </>
+      )}
       <ThemeSwitcher />
     </Container>
   );

@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filter/operations';
 import { SearchInput } from './Filter. styled';
 
-export function Filter() {
+export function Filter({ style }) {
   const dispatch = useDispatch();
 
   const handleFilter = event => {
@@ -16,7 +16,7 @@ export function Filter() {
         name="filter"
         onChange={handleFilter}
         placeholder="FIND CONTACT BY NAME"
-        style={{ marginBottom: '24px' }}
+        style={style}
       />
     </>
   );

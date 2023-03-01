@@ -1,24 +1,9 @@
-import { vars } from 'constants/varialbles';
 import { StyledButton, Children } from './Button.styled';
 
-export function Button({
-  children,
-  width = '20px',
-  height = '20px',
-  color = vars.accentColor,
-  hoverColor = 'blue',
-  textColor = '#fff',
-  onClick,
-}) {
+export function Button({ children, onClick, textSize = '28px', style }) {
   return (
-    <StyledButton
-      onClick={onClick}
-      width={width}
-      height={height}
-      color={color}
-      hoveColor={hoverColor}
-    >
-      <Children textColor={textColor}>{children}</Children>
+    <StyledButton onClick={onClick} style={style}>
+      <Children textSize={textSize}>{children}</Children>
     </StyledButton>
   );
 }
