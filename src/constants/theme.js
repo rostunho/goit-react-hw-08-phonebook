@@ -4,6 +4,7 @@ export const themeLight = Object.freeze({
     headerBg: '#fff',
     primaryText: '#363636',
     accentGrey: '#F1F1F1',
+    additionalGreen: '#41c74e',
     // accent: '#00A3FF',
   },
 
@@ -16,6 +17,7 @@ export const themeDark = Object.freeze({
     headerBg: '#363636',
     primaryText: '#fff',
     accentGrey: '#5C5C5C',
+    additionalGreen: '#41c74e',
 
     // accent: '#00A3FF',
   },

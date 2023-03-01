@@ -1,5 +1,9 @@
-import { StyledLink } from './NaviLink.styled';
+import { StyledLink, StyledAddButton } from './NaviLink.styled';
 
-export function NaviLink({ to, children }) {
-  return <StyledLink to={to}>{children}</StyledLink>;
+export function NaviLink({ to, addButton = false, children }) {
+  return addButton ? (
+    <StyledAddButton to={to}>{children}</StyledAddButton>
+  ) : (
+    <StyledLink to={to}>{children}</StyledLink>
+  );
 }

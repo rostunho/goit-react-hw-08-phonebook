@@ -13,7 +13,7 @@ export function ThemeSwitcher() {
 
   return (
     <>
-      <button type="button" onClick={toggleTheme}>
+      <button type="button" onClick={toggleTheme} style={{ marginTop: '80px' }}>
         Change Theme
       </button>
     </>

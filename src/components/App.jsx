@@ -11,10 +11,12 @@ import { selectCurrentTheme } from 'redux/theme/selectors';
 import { HomePage } from 'pages/HomePage';
 import { ContactsPage } from 'pages/ContactsPage';
 import { ContactDetailsPage } from 'pages/ContactDetailsPage';
+import { NewContactPage } from 'pages/NewContactPage';
 import { Container } from './Container/Container';
 import { Layout } from './Layout/Layout';
 import { SignUpForm } from './SignUpForm/SignUpForm';
 import { LogInForm } from './LogInForm/LogInForm';
+// import { NewContactForm } from './NewContactForm/NewContactForm';
 
 export const App = () => {
   const themeShouldBeDark = useSelector(selectCurrentTheme);
@@ -39,6 +41,7 @@ export const App = () => {
                 path="contacts/:id/:name/:number"
                 element={<ContactDetailsPage />}
               />
+              <Route path="contacts/new" element={<NewContactPage />} />
             </Route>
           </Routes>
         </Container>

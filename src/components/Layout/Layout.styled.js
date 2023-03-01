@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { vars } from 'constants/varialbles';
 
+export const Container = styled.div`
+  display: flex;
+  height: 100%;
+`;
+
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -31,7 +36,8 @@ export const Header = styled.header`
     );
 `;
 
-export const Container = styled.div`
-  display: flex;
-  height: 100%;
+export const MainContent = styled.main`
+  width: 100%;
+  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.headerBg};
 `;

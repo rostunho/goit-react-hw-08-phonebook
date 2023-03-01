@@ -16,7 +16,9 @@ export function Layout() {
       </Header>
       <Container>
         <SideBar />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
       </Container>
     </>
   );
