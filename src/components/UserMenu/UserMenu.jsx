@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { RxAvatar } from 'react-icons/rx';
+import { Avatar } from 'components/Avatar/Avatar';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { Menu, Name } from './UserMenu.styled';
@@ -16,7 +16,7 @@ export function UserMenu() {
 
   return (
     <Menu>
-      <RxAvatar size="50px" color={vars.accentColor} />
+      <Avatar size="50px" />
       <Name>{user.name}</Name>
       <Button
         type="button"
