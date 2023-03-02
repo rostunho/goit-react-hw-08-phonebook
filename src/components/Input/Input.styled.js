@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { vars } from 'constants/varialbles';
 
 export const StyledLabel = styled.label`
   display: block;
@@ -23,7 +24,9 @@ export const StyledInput = styled.input`
   color: ${({ theme }) => theme.colors.primaryText};
   background-color: ${({ theme }) => theme.colors.appBg};
 
-  border: 2px solid ${({ theme }) => theme.colors.borderGrey};
+  border: 2px solid
+    ${({ theme, defaultValue }) =>
+      defaultValue ? vars.accentColor : theme.colors.borderGrey};
   border-radius: 8px;
   outline: none;
 
