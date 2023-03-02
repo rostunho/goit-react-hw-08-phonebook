@@ -13,10 +13,11 @@ import { ContactsPage } from 'pages/ContactsPage';
 import { ContactDetailsPage } from 'pages/ContactDetailsPage';
 import { NewContactPage } from 'pages/NewContactPage';
 import { SignUpPage } from 'pages/SignUpPage';
+import { SignInPage } from 'pages/SignInPage';
 import { Container } from './Container/Container';
 import { Layout } from './Layout/Layout';
 // import { SignUpForm } from './SignUpForm/SignUpForm';
-import { LogInForm } from './LogInForm/LogInForm';
+// import { LogInForm } from './LogInForm/LogInForm';
 // import { NewContactForm } from './NewContactForm/NewContactForm';
 
 export const App = () => {
@@ -36,7 +37,7 @@ export const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="register" element={<SignUpPage />} />
-              <Route path="login" element={<LogInForm />} />
+              <Route path="login" element={<SignInPage />} />
               <Route path="contacts" element={<ContactsPage />} />
               <Route
                 path="contacts/:id/:name/:number"

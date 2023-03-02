@@ -1,3 +1,9 @@
+import { Heading } from 'components/Heading/Heading';
+
 export function HomePage() {
-  return <h1>HOME PAGE</h1>;
+  return (
+    <>
+      <Heading text="WELLCOME TO YOUR PERSONAL PHONEBOOK" />
+    </>
+  );
 }

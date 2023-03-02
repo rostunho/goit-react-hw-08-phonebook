@@ -1,20 +1,22 @@
 import { useDispatch } from 'react-redux';
-import { signUp } from 'redux/auth/operations';
+import { Navigate } from 'react-router-dom';
+import { logIn } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth'; // CLEAR LATER
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
 
-export function SignUpPage() {
+export function SignInPage() {
+  const { isLoggedIn } = useAuth(); //CLEAR LATER
   const dispatch = useDispatch();
 
-  const onSignUp = event => {
+  const onLogIn = event => {
     event.preventDefault();
     const form = event.currentTarget;
 
     dispatch(
-      signUp({
-        name: form.elements.name.value,
+      logIn({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
@@ -22,21 +24,24 @@ export function SignUpPage() {
 
     form.reset();
   };
+
+  if (isLoggedIn) {
+    return <Navigate to="/contacts" />;
+  } // CLEAR LATER
+
   return (
     <>
-      <Heading text="REGISTRATION" style={{ marginBottom: '8px' }} />
+      <Heading text="LOG IN INTO YOUR APP" style={{ marginBottom: '8px' }} />
       <Description
-        text="PLEASE CREATE YOUR PERSONAL ACCOUNT"
+        text="PLEASE ENTER YOUR EMAIL AND PASSWORD"
         style={{ marginBottom: '20px' }}
       />
-
-      <form onSubmit={onSignUp} style={{ padding: '0 177px' }}>
-        <Input label="Name:" type="text" name="name" />
+      <form onSubmit={onLogIn} style={{ padding: '16px 177px' }}>
         <Input label="Email:" type="email" name="email" />
-        <Input label="Password" type="password" name="password" />
+        <Input label="Password:" type="password" name="password" />
 
         <Button type="submit" style={{ marginTop: '40px' }}>
-          Register
+          Log In
         </Button>
       </form>
     </>
