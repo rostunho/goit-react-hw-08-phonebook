@@ -3,13 +3,17 @@ import { selectCurrentTheme } from 'redux/theme/selectors';
 import { Icon } from './Icon';
 import { PhonebookLogo, Label } from './Logo.styled';
 
-export function Logo() {
+export function Logo({ large, style }) {
   const themeIsDark = useSelector(selectCurrentTheme);
 
   return (
-    <PhonebookLogo>
-      <Icon width={107} height={85} color={themeIsDark ? '#fff' : '#000'} />
-      <Label>phonebook</Label>
+    <PhonebookLogo style={style} large={large}>
+      <Icon
+        width={large ? '428px' : '107px'}
+        height={large ? '340px' : '85px'}
+        color={themeIsDark ? '#fff' : '#000'}
+      />
+      {!large && <Label>phonebook</Label>}
     </PhonebookLogo>
   );
 }
