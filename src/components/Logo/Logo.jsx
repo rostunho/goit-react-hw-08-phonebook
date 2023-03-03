@@ -11,7 +11,7 @@ export function Logo({ large, style }) {
       <Icon
         width={large ? '428px' : '107px'}
         height={large ? '340px' : '85px'}
-        color={themeIsDark ? '#fff' : '#000'}
+        color={themeIsDark ? '#fff' : '#4A4A4A'}
       />
       {!large && <Label>phonebook</Label>}
     </PhonebookLogo>
