@@ -12,7 +12,6 @@ export function ContactsPage() {
 
   return (
     <>
-      <p>Test</p>
       <ContactList />
     </>
   );
