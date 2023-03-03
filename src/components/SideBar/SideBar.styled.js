@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.div`
+  position: relative;
   display: block;
   margin-right: 4px;
   padding: 48px;

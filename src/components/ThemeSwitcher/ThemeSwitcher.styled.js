@@ -3,7 +3,9 @@ import { BsSun, BsMoon } from 'react-icons/bs';
 import { vars } from 'constants/varialbles';
 
 export const Track = styled.button`
-  position: relative;
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
   display: block;
   width: 64px;
   height: 32px;
@@ -11,6 +13,7 @@ export const Track = styled.button`
   padding: 0 8px 0 12px;
   margin: 0;
 
+  cursor: pointer;
   outline: none;
   border: none;
   border-radius: 40px;
@@ -27,7 +30,7 @@ export const Thumb = styled.div`
   height: 32px;
   border-radius: 50%;
   background-color: ${vars.accentColor};
-  transition: all 0.25s linear;
+  transition: left 0.25s linear;
   /* transform: translateX(120px); */
 `;
 
