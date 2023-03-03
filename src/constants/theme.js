@@ -6,6 +6,7 @@ export const themeLight = Object.freeze({
     secondaryText: '#6F6F6F',
     accentGrey: '#F1F1F1',
     borderGrey: '#959595',
+    controlsGrey: '#E6E6E6',
     additionalGreen: '#41c74e',
     smoothBlue: '#00A3FF',
     // accent: '#00A3FF',
@@ -22,6 +23,7 @@ export const themeDark = Object.freeze({
     secondaryText: '#959595',
     accentGrey: '#5C5C5C',
     borderGrey: '#6F6F6F',
+    controlsGrey: '#6F6F6F',
     additionalGreen: '#41c74e',
     smoothBlue: '#1788C8',
 
