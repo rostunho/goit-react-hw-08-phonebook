@@ -3,7 +3,6 @@ import { Avatar } from 'components/Avatar/Avatar';
 import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
 import { Menu, Name } from './UserMenu.styled';
-import { vars } from 'constants/varialbles';
 import { Button } from 'components/Button/Button';
 
 export function UserMenu() {
