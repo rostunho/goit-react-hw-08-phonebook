@@ -5,15 +5,7 @@ import {
   deleteContact,
   updateContact,
 } from './operations';
-
-const handlePending = state => {
-  state.isLoading = true;
-};
-
-const handleRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
+import { toast } from 'react-toastify';
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -25,34 +17,59 @@ const contactsSlice = createSlice({
   // Immutating by IMMER.
   extraReducers: builder => {
     builder
-      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.items = action.payload;
       })
-      .addCase(fetchContacts.rejected, handleRejected);
+      .addCase(fetchContacts.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
 
     builder
-      .addCase(addContact.pending, handlePending)
+      .addCase(addContact.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(addContact.fulfilled, (state, action) => {
         state.items.push(action.payload);
+        toast.success('CONTACT CREATED');
       })
-      .addCase(addContact.rejected, handleRejected);
+      .addCase(addContact.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        toast.error('Error creating contact');
+      });
 
     builder
-      .addCase(deleteContact.pending, handlePending)
+      .addCase(deleteContact.pending, state => {
+        state.isLoading = true;
+      })
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.items = state.items.filter(
           contact => contact.id !== action.payload
         );
+        toast.error('CONTACT DELETED');
       })
-      .addCase(deleteContact.rejected, handleRejected);
+      .addCase(deleteContact.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
 
     builder
-      .addCase(updateContact.pending, handlePending)
-      .addCase(updateContact.fulfilled, (state, action) => {
-        state.isLoading = false;
+      .addCase(updateContact.pending, state => {
+        state.isLoading = true;
       })
-      .addCase(updateContact.rejected, handleRejected);
+      .addCase(updateContact.fulfilled, state => {
+        state.isLoading = false;
+        toast.info('Contact saved');
+      })
+      .addCase(updateContact.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+        toast.error('Error updating Contact');
+      });
   },
 });
 

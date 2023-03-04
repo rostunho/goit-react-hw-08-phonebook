@@ -31,6 +31,6 @@ export const StyledAddButton = styled(NavLink)`
   font-size: 24px;
   font-weight: 500;
   color: #fff;
-  background-color: ${({ theme }) => theme.colors.additionalGreen};
+  background-color: ${vars.successGreen};
   border-radius: 8px;
 `;

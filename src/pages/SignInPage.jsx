@@ -7,6 +7,7 @@ import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
+import { toast } from 'react-toastify';
 
 export default function SignInPage() {
   const { isLoggedIn } = useAuth(); //CLEAR LATER
@@ -15,11 +16,18 @@ export default function SignInPage() {
   const onLogIn = event => {
     event.preventDefault();
     const form = event.currentTarget;
+    const email = form.elements.email.value;
+    const password = form.elements.password.value;
+
+    if (email.trim() === '' || password.trim() === '') {
+      toast.info('Please fill in all fields');
+      return;
+    }
 
     dispatch(
       logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
+        email: email,
+        password: password,
       })
     );
 
@@ -41,8 +49,18 @@ export default function SignInPage() {
         style={{ marginBottom: '20px' }}
       />
       <form onSubmit={onLogIn} style={{ padding: '16px 177px' }}>
-        <Input label="Email:" type="email" name="email" />
-        <Input label="Password:" type="password" name="password" />
+        <Input
+          label="Email:"
+          type="email"
+          name="email"
+          title="Enter Your email"
+        />
+        <Input
+          label="Password:"
+          type="password"
+          name="password"
+          title="Enter Your password"
+        />
 
         <Button type="submit" style={{ marginTop: '40px' }}>
           Log In

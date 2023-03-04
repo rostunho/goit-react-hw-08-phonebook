@@ -1,8 +1,8 @@
 import { useEffect, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from 'styled-components';
+import { ToastContainer } from 'react-toastify';
 import { themeLight, themeDark } from 'constants/theme';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -25,7 +25,6 @@ export const App = () => {
   const themeShouldBeDark = useSelector(selectCurrentTheme);
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
-  console.log(isLoading);
 
   useEffect(() => {
     dispatch(userRefresh());
@@ -62,10 +61,7 @@ export const App = () => {
               <Route
                 path="contacts"
                 element={
-                  <PrivateRoute
-                    redirectTo="/login"
-                    element={<ContactsPage />}
-                  />
+                  <PrivateRoute redirectTo="/" element={<ContactsPage />} />
                 }
               />
               <Route
@@ -77,7 +73,11 @@ export const App = () => {
           </Routes>
         </Container>
       )}
-      <Toaster />
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        theme={themeShouldBeDark ? 'dark' : 'light'}
+      />
       <GlobalStyle />
     </ThemeProvider>
   );

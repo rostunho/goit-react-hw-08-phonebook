@@ -1,12 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { signUp, logIn, logOut, userRefresh } from './operations';
-import toast from 'react-hot-toast';
-
-const handleRejected = (state, action) => {
-  // toast.error(action.payload);
-  state.isLoading = false;
-  state.isLoggedIn = false;
-};
+import { toast } from 'react-toastify';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -27,8 +21,13 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
         state.isLoading = false;
+        toast.success('ACCOUNT CREATED');
       })
-      .addCase(signUp.rejected, handleRejected);
+      .addCase(signUp.rejected, state => {
+        state.isLoading = false;
+        state.isLoggedIn = false;
+        toast.error('This email is already registered');
+      });
 
     builder
       .addCase(logIn.pending, state => {
@@ -39,8 +38,13 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.isLoggedIn = true;
         state.isLoading = false;
+        toast.success('LOG IN SUCCESS');
       })
-      .addCase(logIn.rejected, handleRejected);
+      .addCase(logIn.rejected, state => {
+        state.isLoading = false;
+        state.isLoggedIn = false;
+        toast.error('Wrong email or password');
+      });
 
     builder
       .addCase(logOut.pending, state => {
@@ -54,7 +58,6 @@ const authSlice = createSlice({
       });
 
     builder.addCase(logOut.rejected, (state, action) => {
-      toast.error(action.payload);
       state.isLoading = false;
     });
 
@@ -68,7 +71,10 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.isLoading = false;
       })
-      .addCase(userRefresh.rejected, handleRejected);
+      .addCase(userRefresh.rejected, state => {
+        state.isLoading = false;
+        state.isLoggedIn = false;
+      });
   },
 });
 

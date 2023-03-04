@@ -8,6 +8,7 @@ export const PhonebookLogo = styled.div`
   border-radius: 8px;
   margin-right: 4px;
   background-color: ${({ theme }) => theme.colors.appBg};
+  /* cursor: pointer; */
 `;
 
 export const Label = styled.h1`
