@@ -8,7 +8,7 @@ import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
 
-export function SignInPage() {
+export default function SignInPage() {
   const { isLoggedIn } = useAuth(); //CLEAR LATER
   const dispatch = useDispatch();
 

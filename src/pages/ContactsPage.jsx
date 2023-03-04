@@ -8,7 +8,7 @@ import { deleteContact } from 'redux/contacts/operations';
 import { Helmet } from 'react-helmet-async';
 import { Contact } from 'components/Contact/Contact';
 
-export function ContactsPage() {
+export default function ContactsPage() {
   const contacts = useSelector(selectAllContacts);
   const filterValue = useSelector(selectFilterValue);
   const dispatch = useDispatch();

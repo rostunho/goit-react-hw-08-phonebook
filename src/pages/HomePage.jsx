@@ -3,7 +3,7 @@ import { Logo } from 'components/Logo/Logo';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 
-export function HomePage() {
+export default function HomePage() {
   // const themeIsDark = useSelector(selectCurrentTheme);
   return (
     <>

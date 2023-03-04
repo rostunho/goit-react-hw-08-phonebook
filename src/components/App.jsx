@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Toaster } from 'react-hot-toast';
@@ -10,23 +10,22 @@ import { userRefresh } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import { selectCurrentTheme } from 'redux/theme/selectors';
 import { GlobalStyle } from './App.styled';
-
-import {
-  HomePage,
-  ContactsPage,
-  ContactDetailsPage,
-  NewContactPage,
-  SignUpPage,
-  SignInPage,
-} from 'pages';
-
 import { Container } from './Container/Container';
 import { Layout } from './Layout/Layout';
+import { Skeleton } from './Skeleton/Skeleton';
+
+const HomePage = lazy(() => import('pages/HomePage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage'));
+const ContactDetailsPage = lazy(() => import('pages/ContactDetailsPage'));
+const NewContactPage = lazy(() => import('pages/NewContactPage'));
+const SignUpPage = lazy(() => import('pages/SignUpPage'));
+const SignInPage = lazy(() => import('pages/SignInPage'));
 
 export const App = () => {
   const themeShouldBeDark = useSelector(selectCurrentTheme);
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
+  console.log(isLoading);
 
   useEffect(() => {
     dispatch(userRefresh());
@@ -34,7 +33,9 @@ export const App = () => {
 
   return (
     <ThemeProvider theme={themeShouldBeDark ? themeDark : themeLight}>
-      {!isLoading && (
+      {isLoading ? (
+        <Skeleton />
+      ) : (
         <Container>
           <Routes>
             <Route path="/" element={<Layout />}>

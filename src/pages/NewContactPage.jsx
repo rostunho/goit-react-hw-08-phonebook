@@ -9,7 +9,7 @@ import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
 import { vars } from 'constants/varialbles';
 
-export function NewContactPage({ closeModal }) {
+export default function NewContactPage({ closeModal }) {
   const dispatch = useDispatch();
 
   const handleNewContact = event => {

@@ -10,7 +10,7 @@ import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
 import { vars } from 'constants/varialbles';
 
-export function ContactDetailsPage() {
+export default function ContactDetailsPage() {
   const { id, name, number } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();

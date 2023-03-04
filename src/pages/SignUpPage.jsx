@@ -6,7 +6,7 @@ import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
 
-export function SignUpPage() {
+export default function SignUpPage() {
   const dispatch = useDispatch();
 
   const onSignUp = event => {

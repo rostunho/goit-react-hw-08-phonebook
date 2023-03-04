@@ -1,24 +1,17 @@
 import styled from 'styled-components';
 import { vars } from 'constants/varialbles';
 
-export const Container = styled.div`
-  display: flex;
-  height: 100%;
-`;
-
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* overflow: hidden; */
 
   width: 100%;
   height: 122px;
   margin-top: 4px;
   margin-bottom: 4px;
-  /* padding: 0 48px; */
-  border-radius: 8px;
 
+  border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.appBg};
 
   background-image: linear-gradient(
