@@ -6,6 +6,7 @@ import { UserMenu } from 'components/UserMenu/UserMenu';
 import { SideBar } from 'components/SideBar/SideBar';
 import { Header, MainContent } from './Layout.styled';
 import { Container } from 'components/Container/Container';
+import { Spinner } from 'components/Spinner/Spinner';
 
 export function Layout() {
   const { isLoggedIn } = useAuth();
@@ -19,7 +20,7 @@ export function Layout() {
       <Container flex>
         <SideBar />
         <MainContent>
-          <Suspense fallback={<h1>... LOADING ...</h1>}>
+          <Suspense fallback={<Spinner />}>
             <Outlet />
           </Suspense>
         </MainContent>

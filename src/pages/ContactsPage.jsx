@@ -36,6 +36,7 @@ export default function ContactsPage() {
       <Helmet>
         <title>Contacts</title>
       </Helmet>
+
       <ul>
         {visibleContacts !== [] &&
           visibleContacts.map(contact => (

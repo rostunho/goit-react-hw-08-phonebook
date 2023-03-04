@@ -30,6 +30,7 @@ export const Header = styled.header`
 `;
 
 export const MainContent = styled.main`
+  position: relative;
   display: block;
   /* align-items: center;
   justify-content: center; */
