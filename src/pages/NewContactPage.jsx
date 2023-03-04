@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
+import { Helmet } from 'react-helmet-async';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Container } from 'components/Container/Container';
@@ -26,6 +27,9 @@ export function NewContactPage({ closeModal }) {
 
   return (
     <>
+      <Helmet>
+        <title>New Contact</title>
+      </Helmet>
       <Heading text="CREATE CONTACT" style={{ marginBottom: '8px' }} />
       <Description
         text="PLEASE ADD NEW NAME AND PHONE NUMBER"

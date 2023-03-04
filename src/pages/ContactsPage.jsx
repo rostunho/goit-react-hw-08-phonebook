@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/contacts/operations';
-// import { ContactList } from 'components/ContactList/ContactList';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { deleteContact } from 'redux/contacts/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { selectFilterValue } from 'redux/filter/selectors';
+import { deleteContact } from 'redux/contacts/operations';
+import { Helmet } from 'react-helmet-async';
 import { Contact } from 'components/Contact/Contact';
-// import { List } from './ContactList.styled';
 
 export function ContactsPage() {
   const contacts = useSelector(selectAllContacts);
@@ -33,17 +32,22 @@ export function ContactsPage() {
   );
 
   return (
-    <ul>
-      {visibleContacts !== [] &&
-        visibleContacts.map(contact => (
-          <li key={contact.id}>
-            <Contact
-              contact={contact}
-              handleUpdate={handleUpdate}
-              handleRemove={handleRemove}
-            />
-          </li>
-        ))}
-    </ul>
+    <>
+      <Helmet>
+        <title>Contacts</title>
+      </Helmet>
+      <ul>
+        {visibleContacts !== [] &&
+          visibleContacts.map(contact => (
+            <li key={contact.id}>
+              <Contact
+                contact={contact}
+                handleUpdate={handleUpdate}
+                handleRemove={handleRemove}
+              />
+            </li>
+          ))}
+      </ul>
+    </>
   );
 }

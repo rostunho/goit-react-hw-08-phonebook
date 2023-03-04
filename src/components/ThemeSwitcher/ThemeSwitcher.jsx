@@ -7,8 +7,6 @@ export function ThemeSwitcher() {
   const themeIsDark = useSelector(selectCurrentTheme);
   const dispatch = useDispatch();
 
-  console.log(themeIsDark);
-
   const toggleTheme = () => {
     document.body.style.transition = 'all 0.25s linear';
     dispatch(themeChange(!themeIsDark));

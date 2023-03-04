@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from 'styled-components';
 import { themeLight, themeDark } from 'constants/theme';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 import { GlobalStyle } from './App.styled';
-import { Toaster } from 'react-hot-toast';
 import { userRefresh } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import { selectCurrentTheme } from 'redux/theme/selectors';
@@ -16,9 +18,6 @@ import { SignUpPage } from 'pages/SignUpPage';
 import { SignInPage } from 'pages/SignInPage';
 import { Container } from './Container/Container';
 import { Layout } from './Layout/Layout';
-// import { SignUpForm } from './SignUpForm/SignUpForm';
-// import { LogInForm } from './LogInForm/LogInForm';
-// import { NewContactForm } from './NewContactForm/NewContactForm';
 
 export const App = () => {
   const themeShouldBeDark = useSelector(selectCurrentTheme);
@@ -36,9 +35,34 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
-              <Route path="register" element={<SignUpPage />} />
-              <Route path="login" element={<SignInPage />} />
-              <Route path="contacts" element={<ContactsPage />} />
+              <Route
+                path="register"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/contacts"
+                    element={<SignUpPage />}
+                  />
+                }
+              />
+              <Route
+                path="login"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/contacts"
+                    element={<SignInPage />}
+                  />
+                }
+              />
+
+              <Route
+                path="contacts"
+                element={
+                  <PrivateRoute
+                    redirectTo="/login"
+                    element={<ContactsPage />}
+                  />
+                }
+              />
               <Route
                 path="contacts/:id/:name/:number"
                 element={<ContactDetailsPage />}

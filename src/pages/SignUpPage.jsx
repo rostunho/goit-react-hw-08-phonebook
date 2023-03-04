@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/operations';
+import { Helmet } from 'react-helmet-async';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
@@ -24,6 +25,9 @@ export function SignUpPage() {
   };
   return (
     <>
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <Heading text="REGISTRATION" style={{ marginBottom: '8px' }} />
       <Description
         text="PLEASE CREATE YOUR PERSONAL ACCOUNT"

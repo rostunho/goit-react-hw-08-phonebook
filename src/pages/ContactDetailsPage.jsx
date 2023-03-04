@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { updateContact } from 'redux/contacts/operations';
+import { Helmet } from 'react-helmet-async';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Container } from 'components/Container/Container';
@@ -30,6 +31,9 @@ export function ContactDetailsPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Edit Contact</title>
+      </Helmet>
       <Heading text="EDIT CONTACT" style={{ marginBottom: '8px' }} />
       <Description
         text="CHANGE YOUR CONTACTS NAME OR PHONE"

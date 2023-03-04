@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth'; // CLEAR LATER
+import { Helmet } from 'react-helmet-async';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
@@ -31,6 +32,9 @@ export function SignInPage() {
 
   return (
     <>
+      <Helmet>
+        <title>Log In</title>
+      </Helmet>
       <Heading text="LOG IN INTO YOUR APP" style={{ marginBottom: '8px' }} />
       <Description
         text="PLEASE ENTER YOUR EMAIL AND PASSWORD"
