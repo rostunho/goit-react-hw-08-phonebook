@@ -6,16 +6,20 @@ import { ThemeProvider } from 'styled-components';
 import { themeLight, themeDark } from 'constants/theme';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
-import { GlobalStyle } from './App.styled';
 import { userRefresh } from 'redux/auth/operations';
 import { selectIsLoading } from 'redux/auth/selectors';
 import { selectCurrentTheme } from 'redux/theme/selectors';
-import { HomePage } from 'pages/HomePage';
-import { ContactsPage } from 'pages/ContactsPage';
-import { ContactDetailsPage } from 'pages/ContactDetailsPage';
-import { NewContactPage } from 'pages/NewContactPage';
-import { SignUpPage } from 'pages/SignUpPage';
-import { SignInPage } from 'pages/SignInPage';
+import { GlobalStyle } from './App.styled';
+
+import {
+  HomePage,
+  ContactsPage,
+  ContactDetailsPage,
+  NewContactPage,
+  SignUpPage,
+  SignInPage,
+} from 'pages';
+
 import { Container } from './Container/Container';
 import { Layout } from './Layout/Layout';
 
