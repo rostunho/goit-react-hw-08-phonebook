@@ -9,8 +9,6 @@ export const themeLight = Object.freeze({
     controlsGrey: '#E6E6E6',
     smoothBlue: '#00A3FF',
   },
-
-  spacing: value => `${4 * value}px`,
 });
 
 export const themeDark = Object.freeze({
@@ -24,6 +22,4 @@ export const themeDark = Object.freeze({
     controlsGrey: '#6F6F6F',
     smoothBlue: '#1788C8',
   },
-
-  spacing: value => `${4 * value}px`,
 });

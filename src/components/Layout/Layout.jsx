@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { Logo } from 'components/Logo/Logo';
 import { useAuth } from 'hooks/useAuth';
+import { Logo } from 'components/Logo/Logo';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import { SideBar } from 'components/SideBar/SideBar';
-import { Header, MainContent } from './Layout.styled';
 import { Container } from 'components/Container/Container';
 import { Spinner } from 'components/Spinner/Spinner';
+import { Header, MainContent } from './Layout.styled';
 
 export function Layout() {
   const { isLoggedIn } = useAuth();

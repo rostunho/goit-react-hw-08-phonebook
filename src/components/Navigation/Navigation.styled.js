@@ -14,10 +14,9 @@ export const Nav = styled.nav`
 
 export const List = styled.ul`
   display: block;
-  list-style: none;
-  /* overflow: hidden; */
   margin: 0 0 0 48px;
   padding: 0;
+  list-style: none;
 `;
 
 export const Item = styled.li`

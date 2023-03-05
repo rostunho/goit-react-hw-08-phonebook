@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCurrentTheme } from 'redux/theme/selectors';
 import { themeChange } from 'redux/theme/operations';
+import { selectCurrentTheme } from 'redux/theme/selectors';
 import { Track, Thumb, SunIcon, MoonIcon } from './ThemeSwitcher.styled';
 
 export function ThemeSwitcher() {

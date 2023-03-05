@@ -7,11 +7,11 @@ export const Track = styled.button`
   bottom: 48px;
   left: 48px;
   display: block;
+  margin: 0;
+  padding: 0 8px 0 12px;
+
   width: 64px;
   height: 32px;
-
-  padding: 0 8px 0 12px;
-  margin: 0;
 
   cursor: pointer;
   outline: none;
@@ -26,26 +26,27 @@ export const Thumb = styled.div`
   position: absolute;
   top: 0;
   left: ${props => (props.dark ? '32px' : 0)};
+
   width: 32px;
   height: 32px;
+
   border-radius: 50%;
   background-color: ${vars.accentColor};
   transition: left 0.25s linear;
-  /* transform: translateX(120px); */
 `;
 
 export const SunIcon = styled(BsSun)`
   display: block;
+  margin-left: auto;
   width: 20px;
   height: 20px;
-  margin-left: auto;
   color: ${({ theme }) => theme.colors.primaryText};
 `;
 
 export const MoonIcon = styled(BsMoon)`
   display: block;
   width: 18px;
-  height: 18px;
   margin-right: auto;
+  height: 18px;
   color: ${({ theme }) => theme.colors.primaryText};
 `;

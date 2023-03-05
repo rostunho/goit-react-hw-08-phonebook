@@ -1,6 +1,6 @@
-import { Helmet } from 'react-helmet-async';
 import { useDispatch } from 'react-redux';
 import { signUp } from 'redux/auth/operations';
+import { Helmet } from 'react-helmet-async';
 import { toast } from 'react-toastify';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';

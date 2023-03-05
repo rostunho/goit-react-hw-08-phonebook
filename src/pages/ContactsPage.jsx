@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { fetchContacts } from 'redux/contacts/operations';
+import { fetchContacts, deleteContact } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import { selectFilterValue } from 'redux/filter/selectors';
-import { deleteContact } from 'redux/contacts/operations';
 import { Helmet } from 'react-helmet-async';
 import { Contact } from 'components/Contact/Contact';
+import { Description } from 'components/Description/Description';
 
 import { useLocation } from 'react-router-dom';
 
@@ -17,6 +17,8 @@ export default function ContactsPage() {
   const listEndRef = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const contactListIsEmpty = contacts.length === 0;
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -42,9 +44,9 @@ export default function ContactsPage() {
     dispatch(deleteContact(id));
   };
 
-  const normalizedFilter = filterValue.toLowerCase();
+  const normalizedFilter = filterValue.toLowerCase().trim();
   const visibleContacts = contacts?.filter(contact =>
-    contact.name.toLowerCase().includes(normalizedFilter)
+    contact.name.toLowerCase().trim().includes(normalizedFilter)
   );
 
   return (
@@ -52,6 +54,13 @@ export default function ContactsPage() {
       <Helmet>
         <title>Contacts</title>
       </Helmet>
+
+      {contactListIsEmpty && (
+        <Description
+          text="YOUR CONTACT LIST IS EMPTY YET"
+          style={{ marginTop: '120px' }}
+        />
+      )}
 
       <ul>
         {visibleContacts !== [] &&

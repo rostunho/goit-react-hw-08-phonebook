@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet-async';
 import { useAuth } from 'hooks/useAuth';
+import { Helmet } from 'react-helmet-async';
 import { Logo } from 'components/Logo/Logo';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';

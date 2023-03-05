@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { Helmet } from 'react-helmet-async';
+import { toast } from 'react-toastify';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button/Button';
-import { toast } from 'react-toastify';
 
 export default function SignInPage() {
   const dispatch = useDispatch();

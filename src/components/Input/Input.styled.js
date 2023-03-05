@@ -15,8 +15,8 @@ export const StyledInput = styled.input`
   display: block;
   width: 400px;
   height: 48px;
-  padding: 2px 24px;
   margin-top: 8px;
+  padding: 2px 24px;
 
   font-family: 'Roboto';
   font-size: 24px;

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filter/operations';
-import { SearchInput } from './Filter. styled';
+import { SearchInput } from './Filter.styled';
 
 export function Filter({ style }) {
   const dispatch = useDispatch();

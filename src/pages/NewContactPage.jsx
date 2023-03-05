@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
-import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'react-toastify';
 import { Heading } from 'components/Heading/Heading';

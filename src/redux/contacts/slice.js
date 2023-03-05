@@ -26,6 +26,7 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        toast.error('There is no such user collection.');
       });
 
     builder
@@ -55,6 +56,7 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        toast.error('Error deleting Contact');
       });
 
     builder
