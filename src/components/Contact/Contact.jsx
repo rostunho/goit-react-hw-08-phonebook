@@ -9,6 +9,7 @@ import {
   EditIcon,
 } from './Contact.styled';
 import { Avatar } from 'components/Avatar/Avatar';
+import PropTypes from 'prop-types';
 
 export function Contact({ contact, handleRemove, handleUpdate }) {
   return (
@@ -45,3 +46,9 @@ export function Contact({ contact, handleRemove, handleUpdate }) {
     </ContactBody>
   );
 }
+
+Contact.propTypes = {
+  contact: PropTypes.object.isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+};

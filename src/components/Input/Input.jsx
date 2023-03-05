@@ -1,4 +1,5 @@
 import { StyledLabel, StyledInput } from './Input.styled';
+import PropTypes from 'prop-types';
 
 export function Input({
   label,
@@ -23,3 +24,13 @@ export function Input({
     </StyledLabel>
   );
 }
+
+Input.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
+  title: PropTypes.string,
+  required: PropTypes.bool,
+  defaultValue: PropTypes.string,
+};

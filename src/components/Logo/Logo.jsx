@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectCurrentTheme } from 'redux/theme/selectors';
 import { Icon } from './Icon';
 import { PhonebookLogo, Label } from './Logo.styled';
+import PropTypes from 'prop-types';
 
 export function Logo({ large, style, onClick }) {
   const themeIsDark = useSelector(selectCurrentTheme);
@@ -18,3 +19,9 @@ export function Logo({ large, style, onClick }) {
     </PhonebookLogo>
   );
 }
+
+Logo.propTypes = {
+  large: PropTypes.bool,
+  style: PropTypes.object,
+  onClick: PropTypes.func,
+};

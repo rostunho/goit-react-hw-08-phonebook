@@ -13,7 +13,7 @@ export default function HomePage() {
       </Helmet>
       <Logo large style={{ margin: '0 auto' }} />
       <Heading
-        text="WELLCOME TO YOUR PERSONAL PHONEBOOK"
+        text={'WELLCOME TO YOUR PERSONAL PHONEBOOK'}
         style={{ marginTop: '32px' }}
       />
       {!isLoggedIn && (

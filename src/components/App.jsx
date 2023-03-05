@@ -68,7 +68,7 @@ export const App = () => {
                 path="contacts/:id/:name/:number"
                 element={
                   <PrivateRoute
-                    redirectTo="/"
+                    redirectTo={'/'}
                     element={<ContactDetailsPage />}
                   />
                 }

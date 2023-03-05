@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function Icon(props) {
   return (
     <svg
@@ -19,3 +21,7 @@ export function Icon(props) {
     </svg>
   );
 }
+
+Icon.propTypes = {
+  props: PropTypes.object,
+};

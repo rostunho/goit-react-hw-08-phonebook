@@ -1,6 +1,7 @@
 import { Wrapper } from './Spinner.styled';
 import { Bars } from 'react-loader-spinner';
 import { vars } from 'constants/varialbles';
+import PropTypes from 'prop-types';
 
 export function Spinner({ size }) {
   return (
@@ -13,3 +14,7 @@ export function Spinner({ size }) {
     </Wrapper>
   );
 }
+
+Spinner.propTypes = {
+  size: PropTypes.string,
+};

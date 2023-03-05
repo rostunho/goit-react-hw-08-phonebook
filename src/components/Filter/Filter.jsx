@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { changeFilter } from 'redux/filter/operations';
 import { SearchInput } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export function Filter({ style }) {
   const dispatch = useDispatch();
@@ -21,3 +22,7 @@ export function Filter({ style }) {
     </>
   );
 }
+
+Filter.propTypes = {
+  style: PropTypes.object,
+};
