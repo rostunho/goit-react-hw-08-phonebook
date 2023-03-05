@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { signUp, logIn, logOut, userRefresh } from './operations';
 import { toast } from 'react-toastify';
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
   initialState: {
     user: { name: null, email: null },

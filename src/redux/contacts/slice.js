@@ -7,7 +7,7 @@ import {
 } from './operations';
 import { toast } from 'react-toastify';
 
-const contactsSlice = createSlice({
+export const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
     items: [],
