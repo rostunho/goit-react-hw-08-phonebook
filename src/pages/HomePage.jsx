@@ -1,9 +1,11 @@
 import { Helmet } from 'react-helmet-async';
+import { useAuth } from 'hooks/useAuth';
 import { Logo } from 'components/Logo/Logo';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 
 export default function HomePage() {
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <Helmet>
@@ -14,7 +16,9 @@ export default function HomePage() {
         text="WELLCOME TO YOUR PERSONAL PHONEBOOK"
         style={{ marginTop: '32px' }}
       />
-      <Description text="PLEASE LOG IN OR CREATE NEW ACCOUNT ON THE SIDEBAR" />
+      {!isLoggedIn && (
+        <Description text="PLEASE LOG IN OR CREATE NEW ACCOUNT ON THE SIDEBAR" />
+      )}
     </>
   );
 }

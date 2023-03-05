@@ -1,6 +1,6 @@
 import { RxAvatar } from 'react-icons/rx';
-import { Border } from './Avatar.styled';
 import { vars } from 'constants/varialbles';
+import { Border } from './Avatar.styled';
 
 export function Avatar({ size = '50px', color, border = false, style }) {
   const isBordered = border;

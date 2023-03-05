@@ -44,7 +44,7 @@ export const MainContent = styled.main`
   background-color: ${({ theme }) => theme.colors.appBg};
 
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 12px;
   }
 
   /* Track */

@@ -47,13 +47,15 @@ export const ControlButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 48px;
   height: 48px;
-  cursor: pointer;
   outline: none;
+
   border: none;
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.controlsGrey};
+  cursor: pointer;
 
   &:hover,
   &:focus {
