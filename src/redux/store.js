@@ -1,4 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import {
   persistStore,
   persistReducer,
@@ -40,3 +41,4 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+setupListeners(store.dispatch);
