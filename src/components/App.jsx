@@ -66,9 +66,19 @@ export const App = () => {
               />
               <Route
                 path="contacts/:id/:name/:number"
-                element={<ContactDetailsPage />}
+                element={
+                  <PrivateRoute
+                    redirectTo="/"
+                    element={<ContactDetailsPage />}
+                  />
+                }
               />
-              <Route path="contacts/new" element={<NewContactPage />} />
+              <Route
+                path="contacts/new"
+                element={
+                  <PrivateRoute redirectTo="/" element={<NewContactPage />} />
+                }
+              />
             </Route>
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
