@@ -1,7 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-// import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 
-import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import {
   persistStore,
   persistReducer,
@@ -23,13 +21,13 @@ const persistConfig = {
   theme: { key: 'theme', storage, whitelist: ['isDark'] },
 };
 
-// const middleware = [
-//   ...getDefaultMiddleware({
-//     serializableCheck: {
-//       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//     },
-//   }),
-// ];
+const middleware = [
+  ...getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
+];
 
 export const store = configureStore({
   reducer: {
@@ -38,17 +36,8 @@ export const store = configureStore({
     contacts: contactsReducer,
     filter: filterReducer,
   },
-  middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
-  ],
+  middleware,
   devTools: process.env.NODE_ENV === 'development',
-
-  ////
 });
 
 export const persistor = persistStore(store);
-setupListeners(store.dispatch);
