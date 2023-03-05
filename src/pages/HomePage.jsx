@@ -4,7 +4,6 @@ import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
 
 export default function HomePage() {
-  // const themeIsDark = useSelector(selectCurrentTheme);
   return (
     <>
       <Helmet>

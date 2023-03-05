@@ -1,8 +1,8 @@
 import { useEffect, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ThemeProvider } from 'styled-components';
 import { ToastContainer } from 'react-toastify';
+import { ThemeProvider } from 'styled-components';
 import { themeLight, themeDark } from 'constants/theme';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
@@ -70,12 +70,13 @@ export const App = () => {
               />
               <Route path="contacts/new" element={<NewContactPage />} />
             </Route>
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Container>
       )}
       <ToastContainer
         position="top-right"
-        autoClose={4000}
+        autoClose={3000}
         theme={themeShouldBeDark ? 'dark' : 'light'}
       />
       <GlobalStyle />

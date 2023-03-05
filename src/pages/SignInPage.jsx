@@ -1,7 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Navigate } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
-import { useAuth } from 'hooks/useAuth'; // CLEAR LATER
 import { Helmet } from 'react-helmet-async';
 import { Heading } from 'components/Heading/Heading';
 import { Description } from 'components/Description/Description';
@@ -10,7 +8,6 @@ import { Button } from 'components/Button/Button';
 import { toast } from 'react-toastify';
 
 export default function SignInPage() {
-  const { isLoggedIn } = useAuth(); //CLEAR LATER
   const dispatch = useDispatch();
 
   const onLogIn = event => {
@@ -33,10 +30,6 @@ export default function SignInPage() {
 
     form.reset();
   };
-
-  if (isLoggedIn) {
-    return <Navigate to="/contacts" />;
-  } // CLEAR LATER
 
   return (
     <>

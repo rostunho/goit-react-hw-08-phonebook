@@ -18,7 +18,6 @@ export default function SignUpPage() {
     const password = form.elements.password.value;
 
     if (name.trim() === '' || email.trim() === '' || password.trim() === '') {
-      console.log('Oops!!');
       toast.info('Please fill in all fields');
       return;
     }

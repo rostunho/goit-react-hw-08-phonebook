@@ -18,12 +18,9 @@ export const signUp = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/signup', credentials);
-      // console.log('credentials: ', credentials);
       authHeader.set(response.data.token);
-      console.log('in Thunk: ', response);
       return response.data;
     } catch (error) {
-      // console.log(error);
       return thunkAPI.rejectWithValue(
         'Register Error. Try another name, email or password'
       );
@@ -39,7 +36,6 @@ export const logIn = createAsyncThunk(
       authHeader.set(response.data.token);
       return response.data;
     } catch (error) {
-      console.log('Error in Catch: ', error);
       return thunkAPI.rejectWithValue('Log in Error. Wrong email or password');
     }
   }

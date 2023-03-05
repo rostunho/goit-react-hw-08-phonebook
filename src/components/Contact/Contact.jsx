@@ -9,7 +9,6 @@ import {
   EditIcon,
 } from './Contact.styled';
 import { Avatar } from 'components/Avatar/Avatar';
-// import { vars } from 'constants/varialbles';
 
 export function Contact({ contact, handleRemove, handleUpdate }) {
   return (
