@@ -6,6 +6,7 @@ import { UserMenu } from 'components/UserMenu/UserMenu';
 import { SideBar } from 'components/SideBar/SideBar';
 import { Container } from 'components/Container/Container';
 import { Spinner } from 'components/Spinner/Spinner';
+import { Footer } from 'components/Footer/Footer';
 import { Header, MainContent } from './Layout.styled';
 
 export function Layout() {
@@ -26,6 +27,7 @@ export function Layout() {
           </Suspense>
         </MainContent>
       </Container>
+      <Footer transparent />
     </>
   );
 }

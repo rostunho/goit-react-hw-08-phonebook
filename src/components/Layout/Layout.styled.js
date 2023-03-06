@@ -32,8 +32,6 @@ export const Header = styled.header`
 export const MainContent = styled.main`
   position: relative;
   display: block;
-  /* align-items: center;
-  justify-content: center; */
 
   width: 850px;
   height: 564px;
@@ -47,7 +45,6 @@ export const MainContent = styled.main`
     width: 12px;
   }
 
-  /* Track */
   &::-webkit-scrollbar-track {
     background: ${({ theme }) => theme.colors.accentGrey};
     border-top-right-radius: 8px;
@@ -55,15 +52,12 @@ export const MainContent = styled.main`
     /* border-radius: 8px; */
   }
 
-  /* Handle */
   &::-webkit-scrollbar-thumb {
     background: ${vars.accentColor};
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    /* border-radius: 8px; */
   }
 
-  /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
